@@ -1,4 +1,9 @@
-# PiecewiseLinearFunction
+# PiecewiseLinearFunction project
+- Код-ориентированное приложение на базе WPF.
+- Code-oriented application based on WPF.
+# PLF_WPForiented project
+- MVVM-ориентированное приложение на базе WPF.
+- MVVM-oriented application based on WPF.
 
 Реализовано:
 - создание кусочно-линейной функции путём задания ей вершин в таблице,
@@ -12,8 +17,8 @@
 - отображение выбранной функции на графике с учётом изменений в реальном времени,
 - отображение всего списка функций на графике с учётом изменений в реальном времени,
 - возможность изменения координат вершины текущей активной функции по щелчку на координатной сетке графика с занесением изменения в таблицу  (перемещения осуществляет ближайшая к указателю вершина),
-- сохранение данных в файл,
-- загрузка данных из файла,
+- сохранение данных в файл XML формата с расширением .spf,
+- загрузка данных из файла XML формата с расширением .spf,
 - сброс данных,
 - протокол контроля несохранённых данных.
 
@@ -29,7 +34,7 @@ Implemented:
 - displaying the selected function on the plot in realtime mode in real time mode,
 - displaying the entire list of functions on the plot in realtime mode,
 - the possibility to change the coordinates of the vertex of a current active function by clicking on the coordinate grid of the plot(it choosed the closest vertex to the pointer), changes are entered into the table,
-- saving data to a file,
-- loading data from file,
+- saving data to a file of XML format with .spf extension,
+- loading data from file  of XML format with .spf extension,
 - data reset,
 - unsaved data control protocol.
