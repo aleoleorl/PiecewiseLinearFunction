@@ -11,7 +11,7 @@ namespace PiecewiseLinearFunction.data
         {
             CurrentModel = "";
 
-            Model = new Dictionary<string, List<InfoBlock>>();
+            Model = new Dictionary<string, List<Vertex>>();
             View = new List<LabelBlock>();
             ModelNames = new ComboBox();
             IsAllShown = new CheckBox();
@@ -27,7 +27,7 @@ namespace PiecewiseLinearFunction.data
         }
 
         public string CurrentModel;
-        public Dictionary<string, List<InfoBlock>> Model;
+        public Dictionary<string, List<Vertex>> Model;
         public List<LabelBlock> View;
 
         public ComboBox ModelNames;

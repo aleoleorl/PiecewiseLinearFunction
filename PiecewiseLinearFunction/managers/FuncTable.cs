@@ -71,7 +71,7 @@ namespace PiecewiseLinearFunction.managers
             temp.Content = "y";
 
             Data.CurrentModel = "default";
-            Data.Model.Add(Data.CurrentModel, new List<InfoBlock>());
+            Data.Model.Add(Data.CurrentModel, new List<Vertex>());
             TableSample(Data.Model[Data.CurrentModel]);
 
             Data.Editor.Width = 100;
@@ -101,11 +101,11 @@ namespace PiecewiseLinearFunction.managers
 
         #region TableDataHandler
 
-        public void TableSample(List<InfoBlock> currModel)
+        public void TableSample(List<Vertex> currModel)
         {
-            currModel.Add(new InfoBlock(0, 0));
+            currModel.Add(new Vertex(0, 0));
             AddRow();
-            currModel.Add(new InfoBlock(0, 0));
+            currModel.Add(new Vertex(0, 0));
             AddRow();
         }
 
@@ -302,18 +302,18 @@ namespace PiecewiseLinearFunction.managers
             int n = Data.View.FindIndex(item => item.A == Data.ActiveLabel || item.B == Data.ActiveLabel);
             if (ReferenceEquals(Data.View[n].A, Data.ActiveLabel))
             {
-                Data.Model[Data.CurrentModel][n].A = Data.Editor.Text != "" && Data.Editor.Text != "-" ? double.Parse(Data.Editor.Text) : 0;
+                Data.Model[Data.CurrentModel][n].X = Data.Editor.Text != "" && Data.Editor.Text != "-" ? double.Parse(Data.Editor.Text) : 0;
             }
             else
             {
-                Data.Model[Data.CurrentModel][n].B = Data.Editor.Text != "" && Data.Editor.Text != "-" ? double.Parse(Data.Editor.Text) : 0;
+                Data.Model[Data.CurrentModel][n].Y = Data.Editor.Text != "" && Data.Editor.Text != "-" ? double.Parse(Data.Editor.Text) : 0;
             }
         }
 
         #endregion
 
         #region RowHandling
-        public void AddRow(List<InfoBlock> currModel = null, int position = -1)
+        public void AddRow(List<Vertex> currModel = null, int position = -1)
         {
             LabelBlock temp = new LabelBlock();
 
@@ -323,7 +323,7 @@ namespace PiecewiseLinearFunction.managers
             temp.A.Background = new SolidColorBrush(Colors.LightPink);
             if (position != -1)
             {
-                temp.A.Content = currModel[position].A;
+                temp.A.Content = currModel[position].X;
             }
             else
             {
@@ -339,7 +339,7 @@ namespace PiecewiseLinearFunction.managers
             temp.B.Background = new SolidColorBrush(Colors.LightPink);
             if (position != -1)
             {
-                temp.B.Content = currModel[position].B;
+                temp.B.Content = currModel[position].Y;
             }
             else
             {
@@ -444,12 +444,12 @@ namespace PiecewiseLinearFunction.managers
             }
             else if (n == Data.View.Count - 1)
             {
-                Data.Model[Data.CurrentModel].Add(new InfoBlock(0, 0));
+                Data.Model[Data.CurrentModel].Add(new Vertex(0, 0));
                 AddRow();
             }
             else
             {
-                Data.Model[Data.CurrentModel].Insert(n + 1, new InfoBlock(0, 0));
+                Data.Model[Data.CurrentModel].Insert(n + 1, new Vertex(0, 0));
                 AddRow(Data.Model[Data.CurrentModel], n + 1);
             }
         }
@@ -479,8 +479,8 @@ namespace PiecewiseLinearFunction.managers
 
                 for (int i = 0; i < Data.Model[Data.CurrentModel].Count; i++)
                 {
-                    Data.View[i].A.Content = Data.Model[Data.CurrentModel][i].A;
-                    Data.View[i].B.Content = Data.Model[Data.CurrentModel][i].B;
+                    Data.View[i].A.Content = Data.Model[Data.CurrentModel][i].X;
+                    Data.View[i].B.Content = Data.Model[Data.CurrentModel][i].Y;
                 }
             }
         }
@@ -498,7 +498,7 @@ namespace PiecewiseLinearFunction.managers
             StringBuilder clipboardData = new StringBuilder();
             for (int i = 0; i < Data.ChoosedItemList.Count; i++)
             {
-                clipboardData.AppendLine($"{Data.Model[Data.CurrentModel][Data.ChoosedItemList[i]].A}\t{Data.Model[Data.CurrentModel][Data.ChoosedItemList[i]].B}");
+                clipboardData.AppendLine($"{Data.Model[Data.CurrentModel][Data.ChoosedItemList[i]].X}\t{Data.Model[Data.CurrentModel][Data.ChoosedItemList[i]].Y}");
             }
 
             DataObject dataObject = new DataObject();
@@ -546,14 +546,14 @@ namespace PiecewiseLinearFunction.managers
         {
             if (n == -1)
             {
-                Data.Model[Data.CurrentModel].Add(new InfoBlock(a, b));
-                List<InfoBlock> temp = Data.Model[Data.CurrentModel];
+                Data.Model[Data.CurrentModel].Add(new Vertex(a, b));
+                List<Vertex> temp = Data.Model[Data.CurrentModel];
                 AddRow(temp, temp.Count - 1);
             }
             else
             {
-                Data.Model[Data.CurrentModel][n].A = a;
-                Data.Model[Data.CurrentModel][n].B = b;
+                Data.Model[Data.CurrentModel][n].X = a;
+                Data.Model[Data.CurrentModel][n].Y = b;
                 Data.View[n].A.Content = a.ToString();
                 Data.View[n].B.Content = b.ToString();
             }

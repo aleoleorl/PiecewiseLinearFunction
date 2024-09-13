@@ -1,9 +1,12 @@
 ﻿using PiecewiseLinearFunction.data;
 using PiecewiseLinearFunction.managers;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Media;
+
+[assembly: InternalsVisibleTo("TestProject")]
 
 namespace PiecewiseLinearFunction
 {

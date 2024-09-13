@@ -10,12 +10,12 @@ namespace PiecewiseLinearFunction.support
     {
         private LineSeries LineSerie;
         private DataPoint? SelectedPoint;
-        private Dictionary<string, List<InfoBlock>> DataDictionary;
+        private Dictionary<string, List<Vertex>> DataDictionary;
         private string ModelKey;
         public delegate void DataHandler(int index);
         public event DataHandler? DataHandlerNotify;
 
-        public DragDropManipulator(IPlotView plotView, Dictionary<string, List<InfoBlock>> dataDictionary, string modelKey, DataHandler dataHandler) : base(plotView)
+        public DragDropManipulator(IPlotView plotView, Dictionary<string, List<Vertex>> dataDictionary, string modelKey, DataHandler dataHandler) : base(plotView)
         {
             this.LineSerie = plotView.ActualModel.Series[0] as LineSeries;
             this.DataDictionary = dataDictionary;
@@ -51,8 +51,8 @@ namespace PiecewiseLinearFunction.support
                     if (this.DataDictionary.ContainsKey(this.ModelKey))
                     {
                         var infoBlock = this.DataDictionary[this.ModelKey][index];
-                        infoBlock.A = newPosition.X;
-                        infoBlock.B = newPosition.Y;
+                        infoBlock.X = newPosition.X;
+                        infoBlock.Y = newPosition.Y;
                         DataHandlerNotify?.Invoke(index);
                     }
                     else

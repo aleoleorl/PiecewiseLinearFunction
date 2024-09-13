@@ -11,7 +11,7 @@ namespace PiecewiseLinearFunction.support
         {
         }
 
-        public SerializableDictionary(Dictionary<string, List<InfoBlock>> dictionary)
+        public SerializableDictionary(Dictionary<string, List<Vertex>> dictionary)
         {
             foreach (var kvp in dictionary)
             {
@@ -19,9 +19,9 @@ namespace PiecewiseLinearFunction.support
             }
         }
 
-        public Dictionary<string, List<InfoBlock>> ToDictionary()
+        public Dictionary<string, List<Vertex>> ToDictionary()
         {
-            var dictionary = new Dictionary<string, List<InfoBlock>>();
+            var dictionary = new Dictionary<string, List<Vertex>>();
             foreach (var entry in Entries)
             {
                 dictionary[entry.Key] = entry.Value;

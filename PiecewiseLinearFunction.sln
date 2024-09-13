@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiecewiseLinearFunction", "PiecewiseLinearFunction\PiecewiseLinearFunction.csproj", "{6B7804F4-E893-49B4-B559-35E4BFE08EC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PiecewiseLinearFunction", "PiecewiseLinearFunction\PiecewiseLinearFunction.csproj", "{6B7804F4-E893-49B4-B559-35E4BFE08EC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PLF_WPForiented", "PLF_WPForiented\PLF_WPForiented.csproj", "{7F3F6A57-A67E-45EB-B427-D12062573C90}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject01\TestProject\TestProject.csproj", "{2468F7A8-51C8-41C8-8706-9330169F2BB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{6B7804F4-E893-49B4-B559-35E4BFE08EC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B7804F4-E893-49B4-B559-35E4BFE08EC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B7804F4-E893-49B4-B559-35E4BFE08EC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F3F6A57-A67E-45EB-B427-D12062573C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F3F6A57-A67E-45EB-B427-D12062573C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F3F6A57-A67E-45EB-B427-D12062573C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F3F6A57-A67E-45EB-B427-D12062573C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

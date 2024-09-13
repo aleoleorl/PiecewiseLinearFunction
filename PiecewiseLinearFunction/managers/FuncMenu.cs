@@ -124,7 +124,7 @@ namespace PiecewiseLinearFunction.managers
             Data.Model.Clear();
 
             Data.CurrentModel = "default";
-            Data.Model.Add(Data.CurrentModel, new List<InfoBlock>());
+            Data.Model.Add(Data.CurrentModel, new List<Vertex>());
             MWindow.Table.TableSample(Data.Model[Data.CurrentModel]);
 
             Data.IsAllShown.IsChecked = false;
@@ -277,7 +277,7 @@ namespace PiecewiseLinearFunction.managers
                     ViewClear();
 
                     Data.CurrentModel = tempName;
-                    Data.Model.Add(Data.CurrentModel, new List<InfoBlock>());
+                    Data.Model.Add(Data.CurrentModel, new List<Vertex>());
                     MWindow.Table.TableSample(Data.Model[Data.CurrentModel]);
 
                     Data.ModelNames.Items.Add(Data.CurrentModel);
@@ -398,10 +398,10 @@ namespace PiecewiseLinearFunction.managers
             MWindow.Table.ClearTableData();
             ViewClear();
 
-            Data.Model.Add(name, new List<InfoBlock>());
+            Data.Model.Add(name, new List<Vertex>());
             for (int i = 0; i < Data.Model[Data.CurrentModel].Count; i++)
             {
-                Data.Model[name].Add(new InfoBlock(Data.Model[Data.CurrentModel][i].B, Data.Model[Data.CurrentModel][i].A));
+                Data.Model[name].Add(new Vertex(Data.Model[Data.CurrentModel][i].Y, Data.Model[Data.CurrentModel][i].X));
             }
 
             Data.CurrentModel = name;

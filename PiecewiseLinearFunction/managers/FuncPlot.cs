@@ -80,7 +80,7 @@ namespace PiecewiseLinearFunction.managers
 
             foreach (var info in Data.Model[model])
             {
-                lineSeries.Points.Add(new DataPoint(info.A, info.B));
+                lineSeries.Points.Add(new DataPoint(info.X, info.Y));
             }
 
             Data.FuncPlotModel.Series.Add(lineSeries);
@@ -88,8 +88,8 @@ namespace PiecewiseLinearFunction.managers
 
         private void ReVertexView(int index)
         {
-            Data.View[index].A.Content = Data.Model[Data.CurrentModel][index].A;
-            Data.View[index].B.Content = Data.Model[Data.CurrentModel][index].B;
+            Data.View[index].A.Content = Data.Model[Data.CurrentModel][index].X;
+            Data.View[index].B.Content = Data.Model[Data.CurrentModel][index].Y;
             Data.IsSaved = false;
         }
 
