@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="PLF_AvaloniaOriented.Views.RequestBoxWindow"
+        Title="Warning"
+		Width="300"
+		Height="150">
+	<StackPanel Margin="10">
+		<Label Name="InfoArea" Content ="Enter your text here:" Width="290" Height="40" 
+			   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+		<TextBox Name="TextArea" Width="290" Height="40" AcceptsReturn="True" TextWrapping="Wrap"/>
+		<StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+			<Button Name="OkButton" Content="OK" Margin="5"/>
+			<Button Name="CancelButton" Content="Cancel" Margin="5"/>
+		</StackPanel>
+	</StackPanel>
+</Window>

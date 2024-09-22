@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+        xmlns:vm="using:PLF_AvaloniaOriented.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		x:Name="Root"
+        x:Class="PLF_AvaloniaOriented.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="PLF_AvaloniaOriented">
+	<Window.DataContext>
+		<vm:MainWindowViewModel />
+	</Window.DataContext>
+	
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="300" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="300" />
+			<ColumnDefinition Width="300" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<Border Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Background="LemonChiffon" BorderThickness="2" BorderBrush="LightCoral">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="150" />
+					<RowDefinition Height="*" />
+				</Grid.RowDefinitions>
+
+				<Grid Grid.Row="0" Margin="5">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+				</Grid>
+
+				<StackPanel Grid.Column="0" Orientation="Vertical" Margin="0" HorizontalAlignment="Left">
+					<Button Content="clear" Width="50" Height="30" Margin="0,0,0,0" Command="{Binding ClearCommand}"/>
+					<Button Content="save" Width="50" Height="30" Margin="0,0,0,0"  Command="{Binding SaveCommand}"/>
+					<Button Content="load" Width="50" Height="30" Margin="0,0,0,0"  Command="{Binding LoadCommand}"/>
+				</StackPanel>
+
+				<StackPanel Grid.Column="1" Orientation="Vertical" Margin="0" HorizontalAlignment="Right">
+					<ComboBox x:Name="ModelList" Width="165" Height="20" 
+							  ItemsSource="{Binding ModelKeys}" SelectedItem="{Binding SelectedModelKey}"/>
+					<StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+						<Button Content="Add New" Command="{Binding AddNewFuncCommand}" 
+								Width="80" Height="30" Margin="0,0,0,0" HorizontalContentAlignment="Center"/>
+						<Button Content="Del Cur"  Command="{Binding DelCurFuncCommand}"
+								 Width="80" Height="30" Margin="5,0,0,0" HorizontalContentAlignment="Center"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+						<CheckBox Height="20" Margin="0,5,0,0" Content="show all" IsChecked="{Binding IsChecked}"/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+						<Button Content="Add Inverse Func" Width="165" Height="30" Margin="0,0,0,0" HorizontalContentAlignment="Center" Command="{Binding AddInverseFuncCommand}"/>
+					</StackPanel>
+				</StackPanel>
+				
+				<DataGrid x:Name="dataGrid" Grid.Row="1" ItemsSource="{Binding Model}" ClipboardCopyMode="None" 
+						  AutoGenerateColumns="False" CanUserSortColumns="False" 
+                          Margin="-2, 0, -2, 0" Background="LemonChiffon" BorderThickness="2" BorderBrush="LightCoral">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="X" Binding="{Binding X}" Width="0.36*"/>
+						<DataGridTextColumn Header="Y" Binding="{Binding Y}" Width="0.36*"/>
+						<DataGridTemplateColumn Header="(action)" Width="0.30*">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+										<Button Content="+" 
+												Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).AddCommand, 
+										RelativeSource={RelativeSource AncestorType=DataGrid}}"										
+												CommandParameter="{Binding}"/>
+										<Button Content="-"
+												Command="{Binding #Root.((vm:MainWindowViewModel)DataContext).DeleteCommand, 
+										RelativeSource={RelativeSource AncestorType=DataGrid}}"
+												CommandParameter="{Binding}"/>
+									</StackPanel>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</Grid>
+		</Border>
+		
+		<Border Grid.Row="0" Margin="-2,0,0,0" Grid.Column="1" Background="LemonChiffon" BorderThickness="2" BorderBrush="LightCoral">
+			<oxy:PlotView x:Name="plotView" Model="{Binding FuncPlotModel}" Background="LemonChiffon">				
+			</oxy:PlotView>
+		</Border>
+	</Grid>
+</Window>

@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PLF_WPForiented", "PLF_WPFo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject01\TestProject\TestProject.csproj", "{2468F7A8-51C8-41C8-8706-9330169F2BB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLF_AvaloniaOriented", "PLF_AvaloniaOriented\PLF_AvaloniaOriented.csproj", "{361045B3-03CC-42F3-B5FC-B9556FC46275}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2468F7A8-51C8-41C8-8706-9330169F2BB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{361045B3-03CC-42F3-B5FC-B9556FC46275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{361045B3-03CC-42F3-B5FC-B9556FC46275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{361045B3-03CC-42F3-B5FC-B9556FC46275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{361045B3-03CC-42F3-B5FC-B9556FC46275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
