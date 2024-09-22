@@ -4,6 +4,9 @@
 # PLF_WPForiented project
 - MVVM-ориентированное приложение на базе WPF.
 - MVVM-oriented application based on WPF.
+# PLF_Avalonia project
+- MVVM-ориентированное приложение на базе Avalonia.
+- MVVM-oriented application based on Avalonia.
 
 Реализовано:
 - создание кусочно-линейной функции путём задания ей вершин в таблице,
